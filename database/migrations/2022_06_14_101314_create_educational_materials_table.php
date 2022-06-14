@@ -15,7 +15,15 @@ class CreateEducationalMaterialsTable extends Migration
     {
         Schema::create('educational_materials', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('title');
+            $table->integer('type');
+            $table->foreign('category_id')
+                ->references('id')->on('categories')
+                ->onDelete('cascade');
+            $table->string('image');
+            $table->text('description');
+            $table->decimal('price', 8, 4);
+            $table->string('file');
         });
     }
 

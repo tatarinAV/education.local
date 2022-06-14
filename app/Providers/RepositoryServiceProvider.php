@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Repositories\CategoryRepository;
 use App\Repositories\EducationalMaterialRepository;
+use App\Repositories\Interfaces\CategoryInterface;
 use App\Repositories\Interfaces\EducationalMaterialInterface;
 use Illuminate\Support\ServiceProvider;
 
@@ -18,6 +20,10 @@ class RepositoryServiceProvider extends ServiceProvider
         $this->app->bind(
             EducationalMaterialInterface::class,
             EducationalMaterialRepository::class
+        );
+        $this->app->bind(
+            CategoryInterface::class,
+            CategoryRepository::class
         );
     }
 
