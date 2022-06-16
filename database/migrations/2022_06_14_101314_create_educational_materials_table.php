@@ -17,13 +17,11 @@ class CreateEducationalMaterialsTable extends Migration
             $table->id();
             $table->string('title');
             $table->integer('type');
-            $table->foreign('category_id')
-                ->references('id')->on('categories')
-                ->onDelete('cascade');
-            $table->string('image');
+            $table->integer('category_id');
+            $table->string('image')->nullable();
             $table->text('description');
             $table->decimal('price', 8, 4);
-            $table->string('file');
+            $table->string('file')->nullable();
         });
     }
 

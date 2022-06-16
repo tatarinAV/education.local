@@ -5,25 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\EducationalMaterial;
 use App\Http\Requests\StoreEducationalMaterialRequest;
 use App\Http\Requests\UpdateEducationalMaterialRequest;
-use App\Repositories\EducationalMaterialRepository;
 use App\Repositories\Interfaces\EducationalMaterialRepositoryInterface;
+use App\Services\Interfaces\EducationalMaterialServiceInterface;
 
 class EducationalMaterialController extends Controller
 {
-    public function __construct(EducationalMaterialRepositoryInterface $repository,
-                                EducationMaterialServiceInterface $service
-    ) {
+    private $service;
+    private $repository;
+
+    public function __construct(EducationalMaterialRepositoryInterface $repository, EducationalMaterialServiceInterface $service)
+    {
+        $this->service = $service;
+        $this->repository = $repository;
     }
 
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
         //
+        return view('educationalmaterials.educationalmaterials', ['educationalMaterials' => $this->repository->paginate()]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -43,7 +44,7 @@ class EducationalMaterialController extends Controller
      */
     public function store(StoreEducationalMaterialRequest $request)
     {
-        //
+        $this->service->create($request->validated());
     }
 
     /**
@@ -77,7 +78,7 @@ class EducationalMaterialController extends Controller
      */
     public function update(UpdateEducationalMaterialRequest $request, EducationalMaterial $educationalMaterial)
     {
-        //
+        $this->service->update($request->validated(),$educationalMaterial);
     }
 
     /**

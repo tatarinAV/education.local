@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\EducationalMaterialController;
+use App\Http\Controllers\HomeController;
+use App\Models\EducationalMaterial;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -12,10 +15,8 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/educational-materials/', [EducationalMaterialController::class, 'index']);
 
 Route::middleware([
     'auth:sanctum',

@@ -9,5 +9,14 @@ class EducationalMaterialRepository implements EducationalMaterialRepositoryInte
     {
         return EducationalMaterial::all();
     }
+    public function paginate()
+    {
+        return EducationalMaterial::paginate(15);
+    }
+    public function getBestsellers()
+    {
+        //todo: вместо вывода всех полей нужно добавить выборку по количеству покупок, в задаче не реализована корзина для записи
+        return EducationalMaterial::limit(6)->get();
+    }
 
 }

@@ -13,6 +13,6 @@ class EducationalMaterialSeeder extends Seeder
      */
     public function run()
     {
-        //
+        \App\Models\EducationalMaterial::factory(100)->create();
     }
 }

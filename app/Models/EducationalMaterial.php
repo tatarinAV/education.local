@@ -9,6 +9,13 @@ class EducationalMaterial extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    /**
+     * @var mixed
+     */
+    public function getBestsellers()
+    {
+        return $this::all();
+    }
 
     public function categories()
     {

@@ -14,7 +14,13 @@ class EducationalMaterialFactory extends Factory
     public function definition()
     {
         return [
-            //
+            'title' => $this->faker->name(),
+            'type' => $this->faker->numberBetween(0,2),
+            'category_id' => $this->faker->numberBetween(1,10),
+            'image' => '',
+            'description' => $this->faker->text(256),
+            'price' => $this->faker->numberBetween(1,100),
+            'file' => ''
         ];
     }
 }

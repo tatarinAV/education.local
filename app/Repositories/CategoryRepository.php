@@ -10,5 +10,4 @@ class CategoryRepository implements CategoryRepositoryInterface
     {
         return Category::all();
     }
-
 }

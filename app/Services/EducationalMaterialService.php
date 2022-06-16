@@ -7,18 +7,18 @@ class EducationalMaterialService implements EducationalMaterialServiceInterface
 {
 
 
-    public function create()
+    public function create($request)
     {
-        return EducationalMaterial::store();
+        return EducationalMaterial::store($request);
     }
 
-    public function update()
+    public function update($request, $EducationalMaterialId)
     {
-        return EducationalMaterial::update();
+        return EducationalMaterial::update($request, $EducationalMaterialId);
     }
 
-    public function delete()
+    public function delete($EducationalMaterialId)
     {
-        return EducationalMaterial::delete();
+        return EducationalMaterial::delete($EducationalMaterialId);
     }
 }
