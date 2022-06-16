@@ -24,7 +24,13 @@ class UpdateEducationalMaterialRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'title' => 'required|max:128',
+            'type' => 'required|numeric',
+            'category_id' => 'required|numeric',
+            'image' => 'image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'description' => 'required|unique:posts|max:512',
+            'price' =>'required|numeric',
+            'file' =>'mimes:pdf|max:2048'
         ];
     }
 }
