@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\EducationalMaterial;
 use App\Http\Requests\StoreEducationalMaterialRequest;
 use App\Http\Requests\UpdateEducationalMaterialRequest;
+use App\Repositories\EducationalMaterialRepository;
+use App\Repositories\Interfaces\EducationalMaterialRepositoryInterface;
 
 class EducationalMaterialController extends Controller
 {
+    public function __construct(EducationalMaterialRepositoryInterface $repository,
+                                EducationMaterialServiceInterface $service
+    ) {
+    }
+
     /**
      * Display a listing of the resource.
      *

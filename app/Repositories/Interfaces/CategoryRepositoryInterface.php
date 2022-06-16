@@ -1,7 +1,7 @@
 <?php
 namespace App\Repositories\Interfaces;
 
-interface EducationalMaterialInterface
+interface CategoryRepositoryInterface
 {
     public function all();
 

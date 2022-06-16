@@ -1,9 +1,9 @@
 <?php
 namespace App\Repositories;
 use App\Models\EducationalMaterial;
-use App\Repositories\Interfaces\EducationalMaterialInterface;
+use App\Repositories\Interfaces\EducationalMaterialRepositoryInterface;
 
-class EducationalMaterialRepository implements EducationalMaterialInterface
+class EducationalMaterialRepository implements EducationalMaterialRepositoryInterface
 {
     public function all()
     {
