@@ -9,7 +9,9 @@ class Category extends Model
 {
     use HasFactory;
     public $timestamps = false;
-
+    protected $fillable = [
+        'title',
+    ];
     public function educationalMaterial()
     {
         return $this->belongsTo(EducationalMaterial::class);

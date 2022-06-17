@@ -26,4 +26,9 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
+
+    Route::get('/dashboard/educational-materials/add', [EducationalMaterialController::class, 'create']);
+    Route::post('/dashboard/educational-materials/add', [EducationalMaterialController::class, 'store']);
+    Route::get('/dashboard/educational-materials/{id}', [EducationalMaterialController::class, 'edit']);
+    Route::post('/dashboard/educational-materials/{id}', [EducationalMaterialController::class, 'update']);
 });

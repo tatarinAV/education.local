@@ -9,6 +9,15 @@ class EducationalMaterial extends Model
 {
     use HasFactory;
     public $timestamps = false;
+    protected $fillable = [
+        'title',
+        'type',
+        'category_id',
+        'image',
+        'description',
+        'price',
+        'file',
+    ];
     /**
      * @var mixed
      */
